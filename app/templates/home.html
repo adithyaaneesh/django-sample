@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    .headname{
+        background-color: black;
+        color: beige;
+    }
+    .paragraph{
+        background-color: red;
+        color: black;
+    }
+</style>
+<body>
+    {% extends "master.html" %}
+
+    {% block title %}
+        My Tennis Club - List of all members
+    {% endblock %}
+    
+    {% block content %}
+        <p><a href="/">HOME</a></p>
+        <h1 class="headname">Hello World🐍</h1>
+        <p class="paragraph">List Of Members:</p>
+        <ul>
+            {% for x in person %}
+                <li><a href="details/{{ x.id }}">{{ x.firstname}} {{ x.lastname }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+</body>
+</html>
