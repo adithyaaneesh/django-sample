@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
-</head>
-<body>
-
-    {% extends "master.html" %}
+{% extends "master.html" %}
+{% load static %}
 
     {% block title %}
     Details about {{ person.firstname }} {{ person.lastname }}
@@ -15,11 +7,9 @@
 
 
 {% block content %}
+    <img src="{% static 'images/kawaiigirl.jpg' %}" class="kawai"/>
     <h1>{{ person.firstname}} {{person.lastname}}</h1>
     <p>Phone Number: {{ person.phone}}</p>
     <p>Member since: {{ person.date }}</p>
     <button><a href="/home">BACK TO MEMBERS</a></button>
 {% endblock %}
-
-</body>
-</html>

@@ -1,6 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<body>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+<body class="main">
 
 {% for x in fruits %}
   <h1>{{ x }}</h1>

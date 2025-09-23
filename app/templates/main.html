@@ -1,26 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-image: url("{% static 'images/kawaii.jpg' %}");
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+    </style>
 </head>
 <body>
-    {% extends "master.html" %}
-
-    {% block title %}
-    My Tennis Club
-    {% endblock %}
-
-
-    {% block content %}
-    <h1>My Tennis Club</h1>
-
-    <h3>Members</h3>
-    
-    <p>Check out all our <a href="/home">members</a></p>
-    
-    {% endblock %}
-    
+    <h3>Members</h3> 
+    <p>Check out all our <a href="/home">members</a></p>  
 </body>
 </html>
