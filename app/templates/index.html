@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}
+My all members - List of all members
+{% endblock %}
+{% block content %}
+<div>
+    <a href="/">HOME</a>
+    <h1>Members</h1>
+</div>
+<ul>
+    {% for x in person %}
+    <li>
+        {{ x.firstname }} {{ x.lastname }}
+        <a href="{% url 'details' x.id %}">View</a>
+        <a href="{% url 'update' x.id %}">Edit</a>
+        <a href="{% url 'delete' x.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add' %}">Add Member</a>
+{% endblock %}
