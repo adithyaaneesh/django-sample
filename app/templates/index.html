@@ -8,7 +8,31 @@ My all members - List of all members
     <a href="/">HOME</a>
     <h1>Members</h1>
 </div>
-<ul>
+<table>
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in person %}
+        <tr>
+            <td>{{ x.firstname }} </td>
+            <td>{{ x.lastname }}</td>
+            <td><a href="{% url 'details' x.id %}">View</a></td>
+            <td><a href="{% url 'update' x.id %}">Edit</a></td>
+            <td><a href="{% url 'delete' x.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+    
+</table>
+<!-- <ul>
     {% for x in person %}
     <li>
         {{ x.firstname }} {{ x.lastname }}
@@ -17,6 +41,6 @@ My all members - List of all members
         <a href="{% url 'delete' x.id %}">Delete</a>
     </li>
     {% endfor %}
-</ul>
+</ul> -->
 <a href="{% url 'add' %}">Add Member</a>
 {% endblock %}
