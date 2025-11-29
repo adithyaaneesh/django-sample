@@ -14,15 +14,16 @@ Details about {{ person.firstname }} {{ person.lastname }}
         text-align: center;
     }
 
-    .kawai {
+    .profile {
         width: 200px;
         height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
+        border-radius: 50%; 
+        object-fit: cover; 
         border: 3px solid #007bff;
         margin-bottom: 20px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
+
 
     h1 {
         color: #333;
@@ -55,9 +56,8 @@ Details about {{ person.firstname }} {{ person.lastname }}
         background-color: #0056b3;
     }
 
-    /* Optional: Responsive adjustments */
     @media (max-width: 600px) {
-        .kawai {
+        .profile {
             width: 150px;
             height: 150px;
         }
@@ -68,7 +68,7 @@ Details about {{ person.firstname }} {{ person.lastname }}
     }
 </style>
 
-<img src="{% static 'images/kawaiigirl.jpg' %}" class="kawai"/>
+<img src="{% static 'images/membericon.jpg' %}" class="profile"/>
 <h1>{{ person.firstname }} {{ person.lastname }}</h1>
 <p>Phone Number: {{ person.phone }}</p>
 <p>Member since: {{ person.date }}</p>
