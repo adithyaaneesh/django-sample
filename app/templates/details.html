@@ -1,15 +1,76 @@
 {% extends "master.html" %}
 {% load static %}
 
-    {% block title %}
-    Details about {{ person.firstname }} {{ person.lastname }}
-    {% endblock %}
-
+{% block title %}
+Details about {{ person.firstname }} {{ person.lastname }}
+{% endblock %}
 
 {% block content %}
-    <img src="{% static 'images/kawaiigirl.jpg' %}" class="kawai"/>
-    <h1>{{ person.firstname}} {{person.lastname}}</h1>
-    <p>Phone Number: {{ person.phone}}</p>
-    <p>Member since: {{ person.date }}</p>
-    <button><a href="/home">BACK TO MEMBERS</a></button>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .kawai {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #007bff;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #555;
+        margin: 5px 0;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Optional: Responsive adjustments */
+    @media (max-width: 600px) {
+        .kawai {
+            width: 150px;
+            height: 150px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<img src="{% static 'images/kawaiigirl.jpg' %}" class="kawai"/>
+<h1>{{ person.firstname }} {{ person.lastname }}</h1>
+<p>Phone Number: {{ person.phone }}</p>
+<p>Member since: {{ person.date }}</p>
+<button><a href="/home">BACK TO MEMBERS</a></button>
 {% endblock %}

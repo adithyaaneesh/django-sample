@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html>
-<title>Wrong address</title>
+<head>
+    <title>Wrong address</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 72px;
+            color: #ff4c4c;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 48px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
 <body>
 
 <h1>Ooops!</h1>
-
 <h2>I cannot find the file you requested!</h2>
+<a href="/">Go to Home</a>
 
 </body>
 </html>

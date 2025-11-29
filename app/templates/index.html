@@ -3,11 +3,95 @@
 {% block title %}
 My all members - List of all members
 {% endblock %}
+
 {% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    div a {
+        margin-right: 15px;
+        font-weight: bold;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-right: 5px;
+        color: white;
+    }
+
+    .btn-view {
+        background-color: #17a2b8;
+    }
+
+    .btn-edit {
+        background-color: #28a745;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+    }
+
+    .btn-add {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .btn-add:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <div>
     <a href="/">HOME</a>
     <h1>Members</h1>
 </div>
+
 <table>
     <thead>
         <tr>
@@ -21,26 +105,15 @@ My all members - List of all members
     <tbody>
         {% for x in person %}
         <tr>
-            <td>{{ x.firstname }} </td>
+            <td>{{ x.firstname }}</td>
             <td>{{ x.lastname }}</td>
-            <td><a href="{% url 'details' x.id %}">View</a></td>
-            <td><a href="{% url 'update' x.id %}">Edit</a></td>
-            <td><a href="{% url 'delete' x.id %}">Delete</a></td>
+            <td><a class="btn btn-view" href="{% url 'details' x.id %}">View</a></td>
+            <td><a class="btn btn-edit" href="{% url 'update' x.id %}">Edit</a></td>
+            <td><a class="btn btn-delete" href="{% url 'delete' x.id %}">Delete</a></td>
         </tr>
         {% endfor %}
-
     </tbody>
-    
 </table>
-<!-- <ul>
-    {% for x in person %}
-    <li>
-        {{ x.firstname }} {{ x.lastname }}
-        <a href="{% url 'details' x.id %}">View</a>
-        <a href="{% url 'update' x.id %}">Edit</a>
-        <a href="{% url 'delete' x.id %}">Delete</a>
-    </li>
-    {% endfor %}
-</ul> -->
-<a href="{% url 'add' %}">Add Member</a>
+
+<a class="btn-add" href="{% url 'add' %}">Add Member</a>
 {% endblock %}
