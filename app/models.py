@@ -1,3 +1,5 @@
+from django.utils import timezone
+
 from django.db import models
 
 # Create your models here.
@@ -5,6 +7,8 @@ class App(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     phone = models.IntegerField(null=True)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(default=timezone.now)
+
+    # date = models.DateField(auto_now_add=True)
     def __str__(self):
         return f"{self.firstname} {self.lastname}"
