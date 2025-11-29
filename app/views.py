@@ -28,17 +28,21 @@ def add(request):
 def add_record(request):
     fname = request.POST['fname']
     lname = request.POST['lname']
-    new_member = App(firstname=fname, lastname=lname)
+    phone = request.POST['phone']
+    new_member = App(firstname=fname, lastname=lname, phone=phone)
     new_member.save()
     return redirect('home')
+
 
 def update(request,id):
     person = App.objects.get(id=id)
     if request.method == "POST":
         fname = request.POST['fname']
         lname = request.POST['lname']
+        phonenum = request.POST['phone']
         person.firstname = fname
         person.lastname = lname
+        person.phone = phonenum
         person.save()
         return redirect('home')
     return render(request,'update.html', {'person' : person})

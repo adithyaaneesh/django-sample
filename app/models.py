@@ -5,6 +5,6 @@ class App(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     phone = models.IntegerField(null=True)
-    date = models.DateField(null=True)
+    date = models.DateField(auto_now_add=True)
     def __str__(self):
         return f"{self.firstname} {self.lastname}"
